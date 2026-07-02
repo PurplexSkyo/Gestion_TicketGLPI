@@ -1,6 +1,7 @@
 . .\User_Interface\MainScreen.ps1
 . .\User_Interface\Sign_in_UI\Sign_in.ps1
 . .\Services\ApiService.ps1
+. .\User_Interface\Chargement_Screen\ChargementScreen.ps1
 
 #met la session false
 $session_trouvee = $false
@@ -9,9 +10,13 @@ while (-not $session_trouvee)
 {
     Show-SignInDialog
 
+    $Chargement_bar = Show-LoadingBar
+    $Chargement_bar.Show()
+    $Chargement_bar.Refresh()
+    [System.Windows.Forms.Application]::DoEvents()
+
     try
     {
-
         $token = Start-Session  #Recherche le token de session 
 
         if ([string]::IsNullOrWhiteSpace($token))
@@ -22,14 +27,22 @@ while (-not $session_trouvee)
         }
         else
         {
+            
             $session_trouvee = $true
+            
         }
     }
     catch
     {
         Show-Warning "Connexion invalide.`n$($_.Exception.Message)"
     }
+    finally
+    {
+        $Chargement_bar.Close()
+    }
+
 }
+
 Show-Information "Connexion avec succès" #Affiche une page avec une icon information
 $Headers = Get-SessionHeaders $token #Réupère le Session Token 
 Show-MainWindow -sessionheader $Headers #Affiche la fenetre princpale
