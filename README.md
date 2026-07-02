@@ -14,10 +14,34 @@ L'objectif de cette application est de simplifié le quotidien des techniciens e
 ## Pré-requis 
 - Powershell 7+
 - Windows Powershell ISE ou Visual studio code
+  
 
 *Si vous vouliez lancer depuis Visual Studio Code, télécharger l'extension Powershell*
 
 ## Installation
+### Obtenir powershell 7+
+- Windows :
+  ```bash
+  winget install --id Microsoft.PowerShell --source winget
+  ```
+- Mac OS :
+  
+    ```bash
+  brew update
+  brew install --cask powershell
+  ```
+- Linux :
+   ```bash
+  
+  sudo apt-get update
+  sudo apt-get install -y wget apt-transport-https software-properties-common
+  wget -q "https://packages.microsoft.com/config/ubuntu/$(lsb_release -rs)/packages-microsoft-prod.deb"
+  sudo dpkg -i packages-microsoft-prod.deb
+  sudo apt-get update
+  sudo apt-get install -y powershell
+   ```
+
+
 ```bash
 git clone https://github.com/PurplexSkyo/Gestion_TicketGLPI
 cd Gestion_Ticketing
