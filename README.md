@@ -42,13 +42,15 @@ L'objectif de cette application est de simplifié le quotidien des techniciens e
    ```
 
 
-### L'installé
+## L'obtenir
 ```bash
 git clone https://github.com/PurplexSkyo/Gestion_TicketGLPI
 cd Gestion_Ticketing
 ```
 
 ## Utilisation 
+Sélectionner dossier service --> sélectionner le fichier SessionServices.ps1 --> modifier l'UrlAPI à votre API REST
+
 ```bash
 Application_Ticket.bat
 ```
@@ -96,7 +98,7 @@ Gestion_Ticket
 - Winform 
 - Powershell 7+
 
-# PurplexSkyo
+# License
 
-### Natan P. -- Projet réalisé dans le cadre d'un stage informatique
+### PurplexSkyo -- Natan Poulain. -- Projet réalisé dans le cadre d'un stage informatique
 
