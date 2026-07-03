@@ -50,13 +50,13 @@ cd Gestion_Ticketing
 
 ## Utilisation 
 Sélectionner dossier service --> sélectionner le fichier SessionServices.ps1 --> modifier l'UrlAPI à votre API REST
-
+### L'utiliser
 ```bash
 Application_Ticket.bat
 ```
 ou directement :
 ```bash
-Gestion_Ticket
+Gestion_Ticket.ps1
 ```
 ## FAQ 
 
