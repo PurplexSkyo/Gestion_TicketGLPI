@@ -1,6 +1,15 @@
 # Gestion de Ticket GLPI
-Gestion de ticket est une application Windows (interface winforms ) pour les techniciens qui traitent des ticket GLPI au quotidien. Elle permet de récupérer un ticket via l'API GLPI, de l'exporter en CSV. Elle permet également d'executer des scripts en prenant l'ID du ticket en argument. 
-L'objectif de cette application est de simplifié le quotidien des techniciens et d'automatiser le traitement des ticket sans avoir besoin d'ouvrir GLPI 
+Gestion de ticket GLPI simplifie et accélère le traitement des tickets GLPI de type formulaire.
+L'application récupère le formulaire d'un ticket à partir de son ID et l'exporte au format CSV
+Des script peuvent ensuite être exécutés sur ce ticket, et chaque action réalisée est enregistrée localement pour garder un historique
+
+### Pour être utilisé par l'application, un script .ps1 doit respecter les règles suivantes :
+
+- Il doit accepter les arguments :
+    - Le chemin du fichier CSV du ticket
+    - Le chemin du fichier log associé
+- Il doit générer ses logs via Write-Host (affichés dans l'invite de commande ouverte lors de l'exécution)
+- Il doit fonctionner dans l'environnement courant, sans utiliser de chemins absolus
 
 ## Fonctionnalité 
 - Télécharger un Ticket et de l'exporter en CSV
